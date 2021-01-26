@@ -1,8 +1,7 @@
 let htmlBox = document.querySelector(".html"),
     cssBox = document.querySelector(".css"),
     jsBox = document.querySelector(".js"),
-    viewBox = document.querySelector(".view"),
-    cssDocument
+    viewBox = document.querySelector(".view")
 
 htmlBox.onchange = change
 cssBox.onchange = change
@@ -25,7 +24,6 @@ function change (){
       ${htmlBox.value}
     </body>
     </html>`
-  cssDocument = document.querySelector("style")
   eval(jsBox.value)
 }
 
