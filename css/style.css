@@ -1,6 +1,7 @@
 body{
   background-color: #000;
   margin: 0;
+  padding: 20px 15px 0;
 }
 .wrapper{
   display: flex;
@@ -8,22 +9,33 @@ body{
   flex: 0 0 33%;
   width: 95%;
   box-sizing: border-box;
-  margin: 0 auto 40px;
+  margin: 0 auto 20px;
 }
 .cell{
+  position: relative;
   width: 100%;
-  margin: 0 20px;
+  margin: 0 10px;
 }
 h2{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 100px;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
   text-transform: uppercase;
   color: #555;
+  user-select: none;
+  cursor: text;
+  margin: 0;
 }
 .code{
   width: 100%;
-  height: 85vh;
+  height: 50vh;
   background-color: #ddd;
   border: 2px solid #555;
-  border-radius: 10px;
+  color: #333;
+  border-radius: 5px;
   padding: 20px;
   box-sizing: border-box;
   font-size: 16px;
@@ -31,28 +43,44 @@ h2{
   outline: none;
   transition: all 1s ease;
 }
+body::-webkit-scrollbar,
+.view::-webkit-scrollbar,
+.code::-webkit-scrollbar{
+  width: 3px;
+  margin: 10px;
+  background-color: #999;
+  opacity: 0.5;
+  border-radius: 1px;
+}
+body::-webkit-scrollbar-thumb,
+.view::-webkit-scrollbar-thumb,
+.code::-webkit-scrollbar-thumb{
+  background-color: #666;
+}
 .code:focus{
   background-color: #fff;
 }
 
 .view{
-  width: calc(95% - 40px);
-  height: 50vh;
+  position: relative;
+  width: calc(95% - 20px);
+  height: 40vh;
   background-color: #fff;
   border: 2px solid #555;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 20px;
   box-sizing: border-box;
-  margin: 0 auto 40px;
+  margin: 0 auto;
   overflow-y: scroll;
 } 
-.copy{
-  font-size: 20px;
-  line-height: 30px;
-  padding: 10px 5%;
-  color: #fff;
-  background-color: #555;
-}
-.copy p{
-  margin: 0;
+.view:before{
+  content: '© Code online. Made by CN :)';
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  opacity: 0.5;
+  text-transform: uppercase;
+  color: #555;
+  user-select: none;
+  cursor: text;
 }
